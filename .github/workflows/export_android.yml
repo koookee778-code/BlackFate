@@ -29,20 +29,21 @@ jobs:
           mkdir -p "$HOME/.local/share/godot/templates/3.5.2.stable"
           cp -r /root/.local/share/godot/templates/* "$HOME/.local/share/godot/templates/" 2>/dev/null || true
           cp -r /root/.local/share/godot/export_templates/* "$HOME/.local/share/godot/templates/" 2>/dev/null || true
-          if [ ! -f "$HOME/.local/share/godot/templates/3.5.2.stable/android_debug.apk" ]; then
-            echo "Downloading 3.5.2 export templates..."
-            wget -q https://github.com/godotengine/godot/releases/download/3.5.2-stable/Godot_v3.5.2-stable_export_templates.tpz
-            unzip -q -o Godot_v3.5.2-stable_export_templates.tpz
-            cp -r templates/* "$HOME/.local/share/godot/templates/3.5.2.stable/"
-          fi
           
-          # 3. Setup Editor Settings
+          # 3. Setup Editor Settings safely using python
           godot -e -q 2>/dev/null || true
-          mkdir -p "$HOME/.config/godot"
-          echo 'export/android/android_sdk_path = "/usr/lib/android-sdk"' >> "$HOME/.config/godot/editor_settings-3.tres"
-          echo 'export/android/debug_keystore = "'$PWD'/debug.keystore"' >> "$HOME/.config/godot/editor_settings-3.tres"
-          echo 'export/android/debug_keystore_user = "androiddebugkey"' >> "$HOME/.config/godot/editor_settings-3.tres"
-          echo 'export/android/debug_keystore_pass = "android"' >> "$HOME/.config/godot/editor_settings-3.tres
+          python3 -c "
+          import os
+          cfg_path = os.path.expanduser('~/.config/godot/editor_settings-3.tres')
+          os.makedirs(os.path.dirname(cfg_path), exist_ok=True)
+          pwd = os.getcwd()
+          with open(cfg_path, 'a') as f:
+              f.write('export/android/android_sdk_path = \"/usr/lib/android-sdk\"\n')
+              f.write('export/android/debug_keystore = \"' + pwd + '/debug.keystore\"\n')
+              f.write('export/android/debug_keystore_user = \"androiddebugkey\"\n')
+              f.write('export/android/debug_keystore_pass = \"android\"\n')
+          print('Settings updated successfully!')
+          "
 
       - name: "Build Android APK via Godot"
         run: |
