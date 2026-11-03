@@ -12,3 +12,5 @@ scratch_*.py
 clean_sniper_*.png
 Export_Android_Google_Colab.ipynb
 take_all_screenshots.py
+*.apk
+build/
