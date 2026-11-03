@@ -12,7 +12,7 @@ jobs:
     name: "Export Black Fate APK"
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.5.3
+      image: barichello/godot-ci:3.5.2
 
     steps:
       - name: "Checkout Code"
@@ -20,7 +20,7 @@ jobs:
         with:
           lfs: true
 
-      - name: "Setup Android Keystore & SDK Path"
+      - name: "Setup Android Keystore & Settings"
         run: |
           keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Mohamed Emad,O=Black Fate,C=EG" -validity 9999
           godot -e -q 2>/dev/null || true
