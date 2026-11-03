@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/headshot.ogg-37749aff12ff3f74dfc49ca39ea6d040.oggstr"
+
+[deps]
+
+source_file="res://data/audios/zombie/headshot.ogg"
+dest_files=[ "res://.import/headshot.ogg-37749aff12ff3f74dfc49ca39ea6d040.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/out.ogg-805ae56c98efafd8b5651fdf5a6eea47.oggstr"
+
+[deps]
+
+source_file="res://data/audios/weapons/sniper/out.ogg"
+dest_files=[ "res://.import/out.ogg-805ae56c98efafd8b5651fdf5a6eea47.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

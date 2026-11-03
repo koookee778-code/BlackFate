@@ -1,0 +1,1200 @@
+[gd_scene load_steps=150 format=2]
+
+[ext_resource path="res://data/scenes/barrel.tscn" type="PackedScene" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.84, 0.72, 0.52, 1 )
+roughness = 0.85
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.76, 0.68, 0.56, 1 )
+roughness = 0.7
+metallic = 0.1
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.18, 0.32, 0.48, 1 )
+roughness = 0.6
+metallic = 0.1
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.48, 0.20, 0.18, 1 )
+roughness = 0.6
+metallic = 0.1
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.66, 0.60, 0.50, 1 )
+roughness = 0.5
+metallic = 0.3
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.58, 0.48, 0.34, 1 )
+roughness = 0.8
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.74, 0.70, 0.62, 1 )
+roughness = 0.7
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.30, 0.28, 0.24, 1 )
+roughness = 0.4
+metallic = 0.5
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.80, 0.66, 0.44, 1 )
+roughness = 0.3
+metallic = 0.2
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0.52, 0.46, 0.36, 1 )
+roughness = 0.5
+metallic = 0.2
+
+[sub_resource type="CubeMesh" id=11]
+material = SubResource( 1 )
+size = Vector3( 50, 2, 160 )
+
+[sub_resource type="BoxShape" id=80]
+extents = Vector3( 25.0, 1.0, 80.0 )
+
+[sub_resource type="CubeMesh" id=12]
+material = SubResource( 2 )
+size = Vector3( 53, 8, 1.5 )
+
+[sub_resource type="BoxShape" id=81]
+extents = Vector3( 26.5, 4.0, 0.75 )
+
+[sub_resource type="CubeMesh" id=13]
+material = SubResource( 2 )
+size = Vector3( 53, 8, 1.5 )
+
+[sub_resource type="BoxShape" id=82]
+extents = Vector3( 26.5, 4.0, 0.75 )
+
+[sub_resource type="CubeMesh" id=14]
+material = SubResource( 2 )
+size = Vector3( 1.5, 8, 163 )
+
+[sub_resource type="BoxShape" id=83]
+extents = Vector3( 0.75, 4.0, 81.5 )
+
+[sub_resource type="CubeMesh" id=15]
+material = SubResource( 2 )
+size = Vector3( 1.5, 8, 163 )
+
+[sub_resource type="BoxShape" id=84]
+extents = Vector3( 0.75, 4.0, 81.5 )
+
+[sub_resource type="CubeMesh" id=16]
+material = SubResource( 3 )
+size = Vector3( 24, 0.1, 18 )
+
+[sub_resource type="BoxShape" id=85]
+extents = Vector3( 12.0, 0.05, 9.0 )
+
+[sub_resource type="CubeMesh" id=17]
+material = SubResource( 3 )
+size = Vector3( 24, 6, 1 )
+
+[sub_resource type="BoxShape" id=86]
+extents = Vector3( 12.0, 3.0, 0.5 )
+
+[sub_resource type="CubeMesh" id=18]
+material = SubResource( 3 )
+size = Vector3( 1, 6, 18 )
+
+[sub_resource type="BoxShape" id=87]
+extents = Vector3( 0.5, 3.0, 9.0 )
+
+[sub_resource type="CubeMesh" id=19]
+material = SubResource( 3 )
+size = Vector3( 1, 6, 18 )
+
+[sub_resource type="BoxShape" id=88]
+extents = Vector3( 0.5, 3.0, 9.0 )
+
+[sub_resource type="CubeMesh" id=20]
+material = SubResource( 3 )
+size = Vector3( 26, 0.5, 19 )
+
+[sub_resource type="BoxShape" id=89]
+extents = Vector3( 13.0, 0.25, 9.5 )
+
+[sub_resource type="CubeMesh" id=21]
+material = SubResource( 3 )
+size = Vector3( 1.6, 6, 1.6 )
+
+[sub_resource type="BoxShape" id=90]
+extents = Vector3( 0.8, 3.0, 0.8 )
+
+[sub_resource type="CubeMesh" id=22]
+material = SubResource( 3 )
+size = Vector3( 1.6, 6, 1.6 )
+
+[sub_resource type="BoxShape" id=91]
+extents = Vector3( 0.8, 3.0, 0.8 )
+
+[sub_resource type="CubeMesh" id=23]
+material = SubResource( 3 )
+size = Vector3( 24, 1.5, 1.6 )
+
+[sub_resource type="BoxShape" id=92]
+extents = Vector3( 12.0, 0.75, 0.8 )
+
+[sub_resource type="CubeMesh" id=24]
+material = SubResource( 8 )
+size = Vector3( 6, 0.2, 1.8 )
+
+[sub_resource type="BoxShape" id=93]
+extents = Vector3( 3.0, 0.1, 0.9 )
+
+[sub_resource type="CubeMesh" id=25]
+material = SubResource( 8 )
+size = Vector3( 5.6, 0.9, 1.4 )
+
+[sub_resource type="BoxShape" id=94]
+extents = Vector3( 2.8, 0.45, 0.7 )
+
+[sub_resource type="CubeMesh" id=26]
+material = SubResource( 9 )
+size = Vector3( 1.2, 0.1, 0.8 )
+
+[sub_resource type="BoxShape" id=95]
+extents = Vector3( 0.6, 0.05, 0.4 )
+
+[sub_resource type="CubeMesh" id=27]
+material = SubResource( 9 )
+size = Vector3( 1.6, 0.1, 0.8 )
+
+[sub_resource type="BoxShape" id=96]
+extents = Vector3( 0.8, 0.05, 0.4 )
+
+[sub_resource type="CubeMesh" id=28]
+material = SubResource( 9 )
+size = Vector3( 1.2, 0.1, 0.8 )
+
+[sub_resource type="BoxShape" id=97]
+extents = Vector3( 0.6, 0.05, 0.4 )
+
+[sub_resource type="CubeMesh" id=29]
+material = SubResource( 6 )
+size = Vector3( 1, 1, 1.2 )
+
+[sub_resource type="BoxShape" id=98]
+extents = Vector3( 0.5, 0.5, 0.6 )
+
+[sub_resource type="CubeMesh" id=30]
+material = SubResource( 6 )
+size = Vector3( 1, 1, 1.2 )
+
+[sub_resource type="BoxShape" id=99]
+extents = Vector3( 0.5, 0.5, 0.6 )
+
+[sub_resource type="CubeMesh" id=31]
+material = SubResource( 4 )
+size = Vector3( 24, 0.1, 18 )
+
+[sub_resource type="BoxShape" id=100]
+extents = Vector3( 12.0, 0.05, 9.0 )
+
+[sub_resource type="CubeMesh" id=32]
+material = SubResource( 4 )
+size = Vector3( 24, 6, 1 )
+
+[sub_resource type="BoxShape" id=101]
+extents = Vector3( 12.0, 3.0, 0.5 )
+
+[sub_resource type="CubeMesh" id=33]
+material = SubResource( 4 )
+size = Vector3( 1, 6, 18 )
+
+[sub_resource type="BoxShape" id=102]
+extents = Vector3( 0.5, 3.0, 9.0 )
+
+[sub_resource type="CubeMesh" id=34]
+material = SubResource( 4 )
+size = Vector3( 1, 6, 18 )
+
+[sub_resource type="BoxShape" id=103]
+extents = Vector3( 0.5, 3.0, 9.0 )
+
+[sub_resource type="CubeMesh" id=35]
+material = SubResource( 4 )
+size = Vector3( 26, 0.5, 19 )
+
+[sub_resource type="BoxShape" id=104]
+extents = Vector3( 13.0, 0.25, 9.5 )
+
+[sub_resource type="CubeMesh" id=36]
+material = SubResource( 4 )
+size = Vector3( 1.6, 6, 1.6 )
+
+[sub_resource type="BoxShape" id=105]
+extents = Vector3( 0.8, 3.0, 0.8 )
+
+[sub_resource type="CubeMesh" id=37]
+material = SubResource( 4 )
+size = Vector3( 1.6, 6, 1.6 )
+
+[sub_resource type="BoxShape" id=106]
+extents = Vector3( 0.8, 3.0, 0.8 )
+
+[sub_resource type="CubeMesh" id=38]
+material = SubResource( 4 )
+size = Vector3( 24, 1.5, 1.6 )
+
+[sub_resource type="BoxShape" id=107]
+extents = Vector3( 12.0, 0.75, 0.8 )
+
+[sub_resource type="CubeMesh" id=39]
+material = SubResource( 8 )
+size = Vector3( 6, 0.2, 1.8 )
+
+[sub_resource type="BoxShape" id=108]
+extents = Vector3( 3.0, 0.1, 0.9 )
+
+[sub_resource type="CubeMesh" id=40]
+material = SubResource( 8 )
+size = Vector3( 5.6, 0.9, 1.4 )
+
+[sub_resource type="BoxShape" id=109]
+extents = Vector3( 2.8, 0.45, 0.7 )
+
+[sub_resource type="CubeMesh" id=41]
+material = SubResource( 9 )
+size = Vector3( 1.2, 0.1, 0.8 )
+
+[sub_resource type="BoxShape" id=110]
+extents = Vector3( 0.6, 0.05, 0.4 )
+
+[sub_resource type="CubeMesh" id=42]
+material = SubResource( 9 )
+size = Vector3( 1.6, 0.1, 0.8 )
+
+[sub_resource type="BoxShape" id=111]
+extents = Vector3( 0.8, 0.05, 0.4 )
+
+[sub_resource type="CubeMesh" id=43]
+material = SubResource( 9 )
+size = Vector3( 1.2, 0.1, 0.8 )
+
+[sub_resource type="BoxShape" id=112]
+extents = Vector3( 0.6, 0.05, 0.4 )
+
+[sub_resource type="CubeMesh" id=44]
+material = SubResource( 6 )
+size = Vector3( 1, 1, 1.2 )
+
+[sub_resource type="BoxShape" id=113]
+extents = Vector3( 0.5, 0.5, 0.6 )
+
+[sub_resource type="CubeMesh" id=45]
+material = SubResource( 6 )
+size = Vector3( 1, 1, 1.2 )
+
+[sub_resource type="BoxShape" id=114]
+extents = Vector3( 0.5, 0.5, 0.6 )
+
+[sub_resource type="CubeMesh" id=46]
+material = SubResource( 5 )
+size = Vector3( 9, 8.5, 1 )
+
+[sub_resource type="BoxShape" id=115]
+extents = Vector3( 4.5, 4.25, 0.5 )
+
+[sub_resource type="CubeMesh" id=47]
+material = SubResource( 5 )
+size = Vector3( 9, 8.5, 1 )
+
+[sub_resource type="BoxShape" id=116]
+extents = Vector3( 4.5, 4.25, 0.5 )
+
+[sub_resource type="CubeMesh" id=48]
+material = SubResource( 5 )
+size = Vector3( 10, 3.5, 1 )
+
+[sub_resource type="BoxShape" id=117]
+extents = Vector3( 5.0, 1.75, 0.5 )
+
+[sub_resource type="CubeMesh" id=49]
+material = SubResource( 5 )
+size = Vector3( 9, 8.5, 1 )
+
+[sub_resource type="BoxShape" id=118]
+extents = Vector3( 4.5, 4.25, 0.5 )
+
+[sub_resource type="CubeMesh" id=50]
+material = SubResource( 5 )
+size = Vector3( 9, 8.5, 1 )
+
+[sub_resource type="BoxShape" id=119]
+extents = Vector3( 4.5, 4.25, 0.5 )
+
+[sub_resource type="CubeMesh" id=51]
+material = SubResource( 5 )
+size = Vector3( 10, 3.5, 1 )
+
+[sub_resource type="BoxShape" id=120]
+extents = Vector3( 5.0, 1.75, 0.5 )
+
+[sub_resource type="CubeMesh" id=52]
+material = SubResource( 5 )
+size = Vector3( 1, 8.5, 14 )
+
+[sub_resource type="BoxShape" id=121]
+extents = Vector3( 0.5, 4.25, 7.0 )
+
+[sub_resource type="CubeMesh" id=53]
+material = SubResource( 5 )
+size = Vector3( 1, 8.5, 14 )
+
+[sub_resource type="BoxShape" id=122]
+extents = Vector3( 0.5, 4.25, 7.0 )
+
+[sub_resource type="CubeMesh" id=54]
+material = SubResource( 5 )
+size = Vector3( 1, 3.5, 8 )
+
+[sub_resource type="BoxShape" id=123]
+extents = Vector3( 0.5, 1.75, 4.0 )
+
+[sub_resource type="CubeMesh" id=55]
+material = SubResource( 5 )
+size = Vector3( 1, 8.5, 14 )
+
+[sub_resource type="BoxShape" id=124]
+extents = Vector3( 0.5, 4.25, 7.0 )
+
+[sub_resource type="CubeMesh" id=56]
+material = SubResource( 5 )
+size = Vector3( 1, 8.5, 14 )
+
+[sub_resource type="BoxShape" id=125]
+extents = Vector3( 0.5, 4.25, 7.0 )
+
+[sub_resource type="CubeMesh" id=57]
+material = SubResource( 5 )
+size = Vector3( 1, 3.5, 8 )
+
+[sub_resource type="BoxShape" id=126]
+extents = Vector3( 0.5, 1.75, 4.0 )
+
+[sub_resource type="CubeMesh" id=58]
+material = SubResource( 5 )
+size = Vector3( 30, 0.5, 38 )
+
+[sub_resource type="BoxShape" id=127]
+extents = Vector3( 15.0, 0.25, 19.0 )
+
+[sub_resource type="CubeMesh" id=59]
+material = SubResource( 10 )
+size = Vector3( 4.5, 3.6, 12 )
+
+[sub_resource type="BoxShape" id=128]
+extents = Vector3( 2.25, 1.8, 6.0 )
+
+[sub_resource type="CubeMesh" id=60]
+material = SubResource( 6 )
+size = Vector3( 3.5, 2.6, 3.5 )
+
+[sub_resource type="BoxShape" id=129]
+extents = Vector3( 1.75, 1.3, 1.75 )
+
+[sub_resource type="CubeMesh" id=61]
+material = SubResource( 6 )
+size = Vector3( 3.5, 2.6, 3.5 )
+
+[sub_resource type="BoxShape" id=130]
+extents = Vector3( 1.75, 1.3, 1.75 )
+
+[sub_resource type="CubeMesh" id=62]
+material = SubResource( 7 )
+size = Vector3( 4.5, 1.5, 0.8 )
+
+[sub_resource type="BoxShape" id=131]
+extents = Vector3( 2.25, 0.75, 0.4 )
+
+[sub_resource type="CubeMesh" id=63]
+material = SubResource( 7 )
+size = Vector3( 4.5, 1.5, 0.8 )
+
+[sub_resource type="BoxShape" id=132]
+extents = Vector3( 2.25, 0.75, 0.4 )
+
+[sub_resource type="CubeMesh" id=64]
+material = SubResource( 7 )
+size = Vector3( 0.8, 1.5, 6 )
+
+[sub_resource type="BoxShape" id=133]
+extents = Vector3( 0.4, 0.75, 3.0 )
+
+[sub_resource type="CubeMesh" id=65]
+material = SubResource( 6 )
+size = Vector3( 3.2, 2.6, 3.2 )
+
+[sub_resource type="BoxShape" id=134]
+extents = Vector3( 1.6, 1.3, 1.6 )
+
+[sub_resource type="CubeMesh" id=66]
+material = SubResource( 7 )
+size = Vector3( 0.8, 1.5, 6 )
+
+[sub_resource type="BoxShape" id=135]
+extents = Vector3( 0.4, 0.75, 3.0 )
+
+[sub_resource type="CubeMesh" id=67]
+material = SubResource( 7 )
+size = Vector3( 0.8, 1.5, 6 )
+
+[sub_resource type="BoxShape" id=136]
+extents = Vector3( 0.4, 0.75, 3.0 )
+
+[sub_resource type="CubeMesh" id=68]
+material = SubResource( 6 )
+size = Vector3( 3.2, 2.6, 3.2 )
+
+[sub_resource type="BoxShape" id=137]
+extents = Vector3( 1.6, 1.3, 1.6 )
+
+[sub_resource type="CubeMesh" id=69]
+material = SubResource( 7 )
+size = Vector3( 0.8, 1.5, 6 )
+
+[sub_resource type="BoxShape" id=138]
+extents = Vector3( 0.4, 0.75, 3.0 )
+
+[sub_resource type="CubeMesh" id=70]
+material = SubResource( 7 )
+size = Vector3( 6, 1.6, 1.2 )
+
+[sub_resource type="BoxShape" id=139]
+extents = Vector3( 3.0, 0.8, 0.6 )
+
+[sub_resource type="CubeMesh" id=71]
+material = SubResource( 7 )
+size = Vector3( 6, 1.6, 1.2 )
+
+[sub_resource type="BoxShape" id=140]
+extents = Vector3( 3.0, 0.8, 0.6 )
+
+[sub_resource type="CubeMesh" id=72]
+material = SubResource( 6 )
+size = Vector3( 4.5, 2.8, 3.5 )
+
+[sub_resource type="BoxShape" id=141]
+extents = Vector3( 2.25, 1.4, 1.75 )
+
+[sub_resource type="CubeMesh" id=73]
+material = SubResource( 7 )
+size = Vector3( 4, 1.6, 1.2 )
+
+[sub_resource type="BoxShape" id=142]
+extents = Vector3( 2.0, 0.8, 0.6 )
+
+[sub_resource type="CubeMesh" id=74]
+material = SubResource( 7 )
+size = Vector3( 4, 1.6, 1.2 )
+
+[sub_resource type="BoxShape" id=143]
+extents = Vector3( 2.0, 0.8, 0.6 )
+
+[sub_resource type="CubeMesh" id=75]
+material = SubResource( 7 )
+size = Vector3( 6, 1.6, 1.2 )
+
+[sub_resource type="BoxShape" id=144]
+extents = Vector3( 3.0, 0.8, 0.6 )
+
+[sub_resource type="CubeMesh" id=76]
+material = SubResource( 7 )
+size = Vector3( 6, 1.6, 1.2 )
+
+[sub_resource type="BoxShape" id=145]
+extents = Vector3( 3.0, 0.8, 0.6 )
+
+[sub_resource type="CubeMesh" id=77]
+material = SubResource( 6 )
+size = Vector3( 4.5, 2.8, 3.5 )
+
+[sub_resource type="BoxShape" id=146]
+extents = Vector3( 2.25, 1.4, 1.75 )
+
+[sub_resource type="CubeMesh" id=78]
+material = SubResource( 7 )
+size = Vector3( 4, 1.6, 1.2 )
+
+[sub_resource type="BoxShape" id=147]
+extents = Vector3( 2.0, 0.8, 0.6 )
+
+[sub_resource type="CubeMesh" id=79]
+material = SubResource( 7 )
+size = Vector3( 4, 1.6, 1.2 )
+
+[sub_resource type="BoxShape" id=148]
+extents = Vector3( 2.0, 0.8, 0.6 )
+
+[node name="arena" type="Spatial"]
+
+[node name="ground" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="mesh" type="MeshInstance" parent="ground"]
+mesh = SubResource( 11 )
+
+[node name="col" type="CollisionShape" parent="ground"]
+shape = SubResource( 80 )
+
+[node name="wall_north" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -80.75 )
+
+[node name="mesh" type="MeshInstance" parent="wall_north"]
+mesh = SubResource( 12 )
+
+[node name="col" type="CollisionShape" parent="wall_north"]
+shape = SubResource( 81 )
+
+[node name="wall_south" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 80.75 )
+
+[node name="mesh" type="MeshInstance" parent="wall_south"]
+mesh = SubResource( 13 )
+
+[node name="col" type="CollisionShape" parent="wall_south"]
+shape = SubResource( 82 )
+
+[node name="wall_west" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.75, 4, 0 )
+
+[node name="mesh" type="MeshInstance" parent="wall_west"]
+mesh = SubResource( 14 )
+
+[node name="col" type="CollisionShape" parent="wall_west"]
+shape = SubResource( 83 )
+
+[node name="wall_east" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.75, 4, 0 )
+
+[node name="mesh" type="MeshInstance" parent="wall_east"]
+mesh = SubResource( 15 )
+
+[node name="col" type="CollisionShape" parent="wall_east"]
+shape = SubResource( 84 )
+
+[node name="t1_floor_pad" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, -69 )
+
+[node name="mesh" type="MeshInstance" parent="t1_floor_pad"]
+mesh = SubResource( 16 )
+
+[node name="col" type="CollisionShape" parent="t1_floor_pad"]
+shape = SubResource( 85 )
+
+[node name="t1_back_wall" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -78.5 )
+
+[node name="mesh" type="MeshInstance" parent="t1_back_wall"]
+mesh = SubResource( 17 )
+
+[node name="col" type="CollisionShape" parent="t1_back_wall"]
+shape = SubResource( 86 )
+
+[node name="t1_left_wall" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 3, -69 )
+
+[node name="mesh" type="MeshInstance" parent="t1_left_wall"]
+mesh = SubResource( 18 )
+
+[node name="col" type="CollisionShape" parent="t1_left_wall"]
+shape = SubResource( 87 )
+
+[node name="t1_right_wall" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 3, -69 )
+
+[node name="mesh" type="MeshInstance" parent="t1_right_wall"]
+mesh = SubResource( 19 )
+
+[node name="col" type="CollisionShape" parent="t1_right_wall"]
+shape = SubResource( 88 )
+
+[node name="t1_roof" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.25, -69 )
+
+[node name="mesh" type="MeshInstance" parent="t1_roof"]
+mesh = SubResource( 20 )
+
+[node name="col" type="CollisionShape" parent="t1_roof"]
+shape = SubResource( 89 )
+
+[node name="t1_pillar_left" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, -60 )
+
+[node name="mesh" type="MeshInstance" parent="t1_pillar_left"]
+mesh = SubResource( 21 )
+
+[node name="col" type="CollisionShape" parent="t1_pillar_left"]
+shape = SubResource( 90 )
+
+[node name="t1_pillar_right" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, -60 )
+
+[node name="mesh" type="MeshInstance" parent="t1_pillar_right"]
+mesh = SubResource( 22 )
+
+[node name="col" type="CollisionShape" parent="t1_pillar_right"]
+shape = SubResource( 91 )
+
+[node name="t1_lintel" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, -60 )
+
+[node name="mesh" type="MeshInstance" parent="t1_lintel"]
+mesh = SubResource( 23 )
+
+[node name="col" type="CollisionShape" parent="t1_lintel"]
+shape = SubResource( 92 )
+
+[node name="t1_table_top" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -66 )
+
+[node name="mesh" type="MeshInstance" parent="t1_table_top"]
+mesh = SubResource( 24 )
+
+[node name="col" type="CollisionShape" parent="t1_table_top"]
+shape = SubResource( 93 )
+
+[node name="t1_table_base" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -66 )
+
+[node name="mesh" type="MeshInstance" parent="t1_table_base"]
+mesh = SubResource( 25 )
+
+[node name="col" type="CollisionShape" parent="t1_table_base"]
+shape = SubResource( 94 )
+
+[node name="t1_pad_glock" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.05, -66 )
+
+[node name="mesh" type="MeshInstance" parent="t1_pad_glock"]
+mesh = SubResource( 26 )
+
+[node name="col" type="CollisionShape" parent="t1_pad_glock"]
+shape = SubResource( 95 )
+
+[node name="t1_pad_vector" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, -66 )
+
+[node name="mesh" type="MeshInstance" parent="t1_pad_vector"]
+mesh = SubResource( 27 )
+
+[node name="col" type="CollisionShape" parent="t1_pad_vector"]
+shape = SubResource( 96 )
+
+[node name="t1_pad_mk23" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.05, -66 )
+
+[node name="mesh" type="MeshInstance" parent="t1_pad_mk23"]
+mesh = SubResource( 28 )
+
+[node name="col" type="CollisionShape" parent="t1_pad_mk23"]
+shape = SubResource( 97 )
+
+[node name="t1_ammo_box_1" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, -66 )
+
+[node name="mesh" type="MeshInstance" parent="t1_ammo_box_1"]
+mesh = SubResource( 29 )
+
+[node name="col" type="CollisionShape" parent="t1_ammo_box_1"]
+shape = SubResource( 98 )
+
+[node name="t1_ammo_box_2" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, -66 )
+
+[node name="mesh" type="MeshInstance" parent="t1_ammo_box_2"]
+mesh = SubResource( 30 )
+
+[node name="col" type="CollisionShape" parent="t1_ammo_box_2"]
+shape = SubResource( 99 )
+
+[node name="t2_floor_pad" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 69 )
+
+[node name="mesh" type="MeshInstance" parent="t2_floor_pad"]
+mesh = SubResource( 31 )
+
+[node name="col" type="CollisionShape" parent="t2_floor_pad"]
+shape = SubResource( 100 )
+
+[node name="t2_back_wall" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 78.5 )
+
+[node name="mesh" type="MeshInstance" parent="t2_back_wall"]
+mesh = SubResource( 32 )
+
+[node name="col" type="CollisionShape" parent="t2_back_wall"]
+shape = SubResource( 101 )
+
+[node name="t2_left_wall" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 3, 69 )
+
+[node name="mesh" type="MeshInstance" parent="t2_left_wall"]
+mesh = SubResource( 33 )
+
+[node name="col" type="CollisionShape" parent="t2_left_wall"]
+shape = SubResource( 102 )
+
+[node name="t2_right_wall" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 3, 69 )
+
+[node name="mesh" type="MeshInstance" parent="t2_right_wall"]
+mesh = SubResource( 34 )
+
+[node name="col" type="CollisionShape" parent="t2_right_wall"]
+shape = SubResource( 103 )
+
+[node name="t2_roof" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.25, 69 )
+
+[node name="mesh" type="MeshInstance" parent="t2_roof"]
+mesh = SubResource( 35 )
+
+[node name="col" type="CollisionShape" parent="t2_roof"]
+shape = SubResource( 104 )
+
+[node name="t2_pillar_left" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 60 )
+
+[node name="mesh" type="MeshInstance" parent="t2_pillar_left"]
+mesh = SubResource( 36 )
+
+[node name="col" type="CollisionShape" parent="t2_pillar_left"]
+shape = SubResource( 105 )
+
+[node name="t2_pillar_right" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, 60 )
+
+[node name="mesh" type="MeshInstance" parent="t2_pillar_right"]
+mesh = SubResource( 37 )
+
+[node name="col" type="CollisionShape" parent="t2_pillar_right"]
+shape = SubResource( 106 )
+
+[node name="t2_lintel" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.25, 60 )
+
+[node name="mesh" type="MeshInstance" parent="t2_lintel"]
+mesh = SubResource( 38 )
+
+[node name="col" type="CollisionShape" parent="t2_lintel"]
+shape = SubResource( 107 )
+
+[node name="t2_table_top" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 66 )
+
+[node name="mesh" type="MeshInstance" parent="t2_table_top"]
+mesh = SubResource( 39 )
+
+[node name="col" type="CollisionShape" parent="t2_table_top"]
+shape = SubResource( 108 )
+
+[node name="t2_table_base" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 66 )
+
+[node name="mesh" type="MeshInstance" parent="t2_table_base"]
+mesh = SubResource( 40 )
+
+[node name="col" type="CollisionShape" parent="t2_table_base"]
+shape = SubResource( 109 )
+
+[node name="t2_pad_glock" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.05, 66 )
+
+[node name="mesh" type="MeshInstance" parent="t2_pad_glock"]
+mesh = SubResource( 41 )
+
+[node name="col" type="CollisionShape" parent="t2_pad_glock"]
+shape = SubResource( 110 )
+
+[node name="t2_pad_vector" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 66 )
+
+[node name="mesh" type="MeshInstance" parent="t2_pad_vector"]
+mesh = SubResource( 42 )
+
+[node name="col" type="CollisionShape" parent="t2_pad_vector"]
+shape = SubResource( 111 )
+
+[node name="t2_pad_mk23" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.05, 66 )
+
+[node name="mesh" type="MeshInstance" parent="t2_pad_mk23"]
+mesh = SubResource( 43 )
+
+[node name="col" type="CollisionShape" parent="t2_pad_mk23"]
+shape = SubResource( 112 )
+
+[node name="t2_ammo_box_1" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, 66 )
+
+[node name="mesh" type="MeshInstance" parent="t2_ammo_box_1"]
+mesh = SubResource( 44 )
+
+[node name="col" type="CollisionShape" parent="t2_ammo_box_1"]
+shape = SubResource( 113 )
+
+[node name="t2_ammo_box_2" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 0.5, 66 )
+
+[node name="mesh" type="MeshInstance" parent="t2_ammo_box_2"]
+mesh = SubResource( 45 )
+
+[node name="col" type="CollisionShape" parent="t2_ammo_box_2"]
+shape = SubResource( 114 )
+
+[node name="wh_north_left" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 4.25, -18 )
+
+[node name="mesh" type="MeshInstance" parent="wh_north_left"]
+mesh = SubResource( 46 )
+
+[node name="col" type="CollisionShape" parent="wh_north_left"]
+shape = SubResource( 115 )
+
+[node name="wh_north_right" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 4.25, -18 )
+
+[node name="mesh" type="MeshInstance" parent="wh_north_right"]
+mesh = SubResource( 47 )
+
+[node name="col" type="CollisionShape" parent="wh_north_right"]
+shape = SubResource( 116 )
+
+[node name="wh_north_lintel" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.75, -18 )
+
+[node name="mesh" type="MeshInstance" parent="wh_north_lintel"]
+mesh = SubResource( 48 )
+
+[node name="col" type="CollisionShape" parent="wh_north_lintel"]
+shape = SubResource( 117 )
+
+[node name="wh_south_left" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 4.25, 18 )
+
+[node name="mesh" type="MeshInstance" parent="wh_south_left"]
+mesh = SubResource( 49 )
+
+[node name="col" type="CollisionShape" parent="wh_south_left"]
+shape = SubResource( 118 )
+
+[node name="wh_south_right" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 4.25, 18 )
+
+[node name="mesh" type="MeshInstance" parent="wh_south_right"]
+mesh = SubResource( 50 )
+
+[node name="col" type="CollisionShape" parent="wh_south_right"]
+shape = SubResource( 119 )
+
+[node name="wh_south_lintel" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.75, 18 )
+
+[node name="mesh" type="MeshInstance" parent="wh_south_lintel"]
+mesh = SubResource( 51 )
+
+[node name="col" type="CollisionShape" parent="wh_south_lintel"]
+shape = SubResource( 120 )
+
+[node name="wh_west_north" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 4.25, -11 )
+
+[node name="mesh" type="MeshInstance" parent="wh_west_north"]
+mesh = SubResource( 52 )
+
+[node name="col" type="CollisionShape" parent="wh_west_north"]
+shape = SubResource( 121 )
+
+[node name="wh_west_south" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 4.25, 11 )
+
+[node name="mesh" type="MeshInstance" parent="wh_west_south"]
+mesh = SubResource( 53 )
+
+[node name="col" type="CollisionShape" parent="wh_west_south"]
+shape = SubResource( 122 )
+
+[node name="wh_west_lintel" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 6.75, 0 )
+
+[node name="mesh" type="MeshInstance" parent="wh_west_lintel"]
+mesh = SubResource( 54 )
+
+[node name="col" type="CollisionShape" parent="wh_west_lintel"]
+shape = SubResource( 123 )
+
+[node name="wh_east_north" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 4.25, -11 )
+
+[node name="mesh" type="MeshInstance" parent="wh_east_north"]
+mesh = SubResource( 55 )
+
+[node name="col" type="CollisionShape" parent="wh_east_north"]
+shape = SubResource( 124 )
+
+[node name="wh_east_south" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 4.25, 11 )
+
+[node name="mesh" type="MeshInstance" parent="wh_east_south"]
+mesh = SubResource( 56 )
+
+[node name="col" type="CollisionShape" parent="wh_east_south"]
+shape = SubResource( 125 )
+
+[node name="wh_east_lintel" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 6.75, 0 )
+
+[node name="mesh" type="MeshInstance" parent="wh_east_lintel"]
+mesh = SubResource( 57 )
+
+[node name="col" type="CollisionShape" parent="wh_east_lintel"]
+shape = SubResource( 126 )
+
+[node name="wh_roof" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.75, 0 )
+
+[node name="mesh" type="MeshInstance" parent="wh_roof"]
+mesh = SubResource( 58 )
+
+[node name="col" type="CollisionShape" parent="wh_roof"]
+shape = SubResource( 127 )
+
+[node name="wh_container_center" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0 )
+
+[node name="mesh" type="MeshInstance" parent="wh_container_center"]
+mesh = SubResource( 59 )
+
+[node name="col" type="CollisionShape" parent="wh_container_center"]
+shape = SubResource( 128 )
+
+[node name="wh_crate_stack_1" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.3, -7 )
+
+[node name="mesh" type="MeshInstance" parent="wh_crate_stack_1"]
+mesh = SubResource( 60 )
+
+[node name="col" type="CollisionShape" parent="wh_crate_stack_1"]
+shape = SubResource( 129 )
+
+[node name="wh_crate_stack_2" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.3, 7 )
+
+[node name="mesh" type="MeshInstance" parent="wh_crate_stack_2"]
+mesh = SubResource( 61 )
+
+[node name="col" type="CollisionShape" parent="wh_crate_stack_2"]
+shape = SubResource( 130 )
+
+[node name="wh_barrier_1" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.75, -7 )
+
+[node name="mesh" type="MeshInstance" parent="wh_barrier_1"]
+mesh = SubResource( 62 )
+
+[node name="col" type="CollisionShape" parent="wh_barrier_1"]
+shape = SubResource( 131 )
+
+[node name="wh_barrier_2" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.75, 7 )
+
+[node name="mesh" type="MeshInstance" parent="wh_barrier_2"]
+mesh = SubResource( 63 )
+
+[node name="col" type="CollisionShape" parent="wh_barrier_2"]
+shape = SubResource( 132 )
+
+[node name="lane_w_barrier_1" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.75, -12 )
+
+[node name="mesh" type="MeshInstance" parent="lane_w_barrier_1"]
+mesh = SubResource( 64 )
+
+[node name="col" type="CollisionShape" parent="lane_w_barrier_1"]
+shape = SubResource( 133 )
+
+[node name="lane_w_crate_1" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1.3, 0 )
+
+[node name="mesh" type="MeshInstance" parent="lane_w_crate_1"]
+mesh = SubResource( 65 )
+
+[node name="col" type="CollisionShape" parent="lane_w_crate_1"]
+shape = SubResource( 134 )
+
+[node name="lane_w_barrier_2" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0.75, 12 )
+
+[node name="mesh" type="MeshInstance" parent="lane_w_barrier_2"]
+mesh = SubResource( 66 )
+
+[node name="col" type="CollisionShape" parent="lane_w_barrier_2"]
+shape = SubResource( 135 )
+
+[node name="lane_e_barrier_1" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.75, -12 )
+
+[node name="mesh" type="MeshInstance" parent="lane_e_barrier_1"]
+mesh = SubResource( 67 )
+
+[node name="col" type="CollisionShape" parent="lane_e_barrier_1"]
+shape = SubResource( 136 )
+
+[node name="lane_e_crate_1" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.3, 0 )
+
+[node name="mesh" type="MeshInstance" parent="lane_e_crate_1"]
+mesh = SubResource( 68 )
+
+[node name="col" type="CollisionShape" parent="lane_e_crate_1"]
+shape = SubResource( 137 )
+
+[node name="lane_e_barrier_2" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0.75, 12 )
+
+[node name="mesh" type="MeshInstance" parent="lane_e_barrier_2"]
+mesh = SubResource( 69 )
+
+[node name="col" type="CollisionShape" parent="lane_e_barrier_2"]
+shape = SubResource( 138 )
+
+[node name="mid_n_bunker_left" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.8, -44 )
+
+[node name="mesh" type="MeshInstance" parent="mid_n_bunker_left"]
+mesh = SubResource( 70 )
+
+[node name="col" type="CollisionShape" parent="mid_n_bunker_left"]
+shape = SubResource( 139 )
+
+[node name="mid_n_bunker_right" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.8, -44 )
+
+[node name="mesh" type="MeshInstance" parent="mid_n_bunker_right"]
+mesh = SubResource( 71 )
+
+[node name="col" type="CollisionShape" parent="mid_n_bunker_right"]
+shape = SubResource( 140 )
+
+[node name="mid_n_crate_center" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, -32 )
+
+[node name="mesh" type="MeshInstance" parent="mid_n_crate_center"]
+mesh = SubResource( 72 )
+
+[node name="col" type="CollisionShape" parent="mid_n_crate_center"]
+shape = SubResource( 141 )
+
+[node name="mid_n_barrier_left" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.8, -28 )
+
+[node name="mesh" type="MeshInstance" parent="mid_n_barrier_left"]
+mesh = SubResource( 73 )
+
+[node name="col" type="CollisionShape" parent="mid_n_barrier_left"]
+shape = SubResource( 142 )
+
+[node name="mid_n_barrier_right" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.8, -28 )
+
+[node name="mesh" type="MeshInstance" parent="mid_n_barrier_right"]
+mesh = SubResource( 74 )
+
+[node name="col" type="CollisionShape" parent="mid_n_barrier_right"]
+shape = SubResource( 143 )
+
+[node name="mid_s_bunker_left" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.8, 44 )
+
+[node name="mesh" type="MeshInstance" parent="mid_s_bunker_left"]
+mesh = SubResource( 75 )
+
+[node name="col" type="CollisionShape" parent="mid_s_bunker_left"]
+shape = SubResource( 144 )
+
+[node name="mid_s_bunker_right" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.8, 44 )
+
+[node name="mesh" type="MeshInstance" parent="mid_s_bunker_right"]
+mesh = SubResource( 76 )
+
+[node name="col" type="CollisionShape" parent="mid_s_bunker_right"]
+shape = SubResource( 145 )
+
+[node name="mid_s_crate_center" type="StaticBody" parent="." groups=["wallk"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 30 )
+
+[node name="mesh" type="MeshInstance" parent="mid_s_crate_center"]
+mesh = SubResource( 77 )
+
+[node name="col" type="CollisionShape" parent="mid_s_crate_center"]
+shape = SubResource( 146 )
+
+[node name="mid_s_barrier_left" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.8, 28 )
+
+[node name="mesh" type="MeshInstance" parent="mid_s_barrier_left"]
+mesh = SubResource( 78 )
+
+[node name="col" type="CollisionShape" parent="mid_s_barrier_left"]
+shape = SubResource( 147 )
+
+[node name="mid_s_barrier_right" type="StaticBody" parent="." groups=["concrete"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.8, 28 )
+
+[node name="mesh" type="MeshInstance" parent="mid_s_barrier_right"]
+mesh = SubResource( 79 )
+
+[node name="col" type="CollisionShape" parent="mid_s_barrier_right"]
+shape = SubResource( 148 )
+
+[node name="props" type="Spatial" parent="."]
+
+[node name="barrel_0" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.8, -12 )
+
+[node name="barrel_1" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.8, 12 )
+
+[node name="barrel_2" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.8, 4 )
+
+[node name="barrel_3" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.8, -4 )
+
+[node name="barrel_4" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0.8, -5 )
+
+[node name="barrel_5" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 0.8, 6 )
+
+[node name="barrel_6" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0.8, -6 )
+
+[node name="barrel_7" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0.8, 5 )
+
+[node name="barrel_8" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.8, -32 )
+
+[node name="barrel_9" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.8, -32 )
+
+[node name="barrel_10" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -46 )
+
+[node name="barrel_11" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.8, 32 )
+
+[node name="barrel_12" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.8, 32 )
+
+[node name="barrel_13" parent="props" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 46 )

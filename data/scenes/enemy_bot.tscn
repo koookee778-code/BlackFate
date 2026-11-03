@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://data/scripts/ai/enemy_bot.gd" type="Script" id=1]
+[ext_resource path="res://data/audios/weapons/glock_17/fire.ogg" type="AudioStream" id=2]
+[ext_resource path="res://data/audios/barrel/impact.ogg" type="AudioStream" id=3]
+[ext_resource path="res://data/audios/character/fall/die.ogg" type="AudioStream" id=4]
+[ext_resource path="res://data/models/Zombie.glb" type="PackedScene" id=5]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.55
+height = 1.6
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_unshaded = true
+flags_billboard_mode = 1
+albedo_color = Color( 0.08, 0.08, 0.08, 0.88 )
+
+[sub_resource type="QuadMesh" id=3]
+material = SubResource( 2 )
+size = Vector2( 1.4, 0.18 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_unshaded = true
+flags_billboard_mode = 1
+albedo_color = Color( 0.88, 0.08, 0.08, 1 )
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 1.35, 0.14 )
+
+[node name="enemy_bot" type="KinematicBody"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource( 1 )
+
+[node name="collision" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.35, 0 )
+shape = SubResource( 1 )
+
+[node name="muzzle" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 1.8, -1.0 )
+
+[node name="light" type="OmniLight" parent="muzzle"]
+light_color = Color( 1, 0.4, 0.1, 1 )
+light_energy = 0.0
+omni_range = 5.0
+shadow_enabled = false
+
+[node name="audio_shoot" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 2 )
+unit_db = 3.5
+max_distance = 45.0
+
+[node name="audio_hit" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 3 )
+unit_db = 2.0
+max_distance = 28.0
+
+[node name="audio_die" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 4 )
+unit_db = 5.0
+max_distance = 40.0
+
+[node name="los_ray" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -40 )
+collision_mask = 3
+
+[node name="health_bar" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2, 0 )
+
+[node name="bar_bg" type="MeshInstance" parent="health_bar"]
+cast_shadow = 0
+mesh = SubResource( 3 )
+
+[node name="bar_fill" type="MeshInstance" parent="health_bar"]
+cast_shadow = 0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.005 )
+mesh = SubResource( 5 )
+
+[node name="soldier" parent="." instance=ExtResource( 5 )]
+transform = Transform( -1.15, 0, -1.00536e-07, 0, 1.15, 0, 1.00536e-07, 0, -1.15, 0, 0, 0 )
+
+[node name="weapon_mount" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35, 1.7, -0.6 )

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://data/scripts/effects/blood_spray.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+flags_billboard_mode = 3
+params_billboard_mode = 3
+albedo_color = Color( 0.88, 0.02, 0.03, 0.98 )
+
+[sub_resource type="QuadMesh" id=2]
+material = SubResource( 1 )
+size = Vector2( 0.22, 0.22 )
+
+[node name="blood_spray" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="particles" type="CPUParticles" parent="."]
+cast_shadow = 0
+emitting = true
+amount = 35
+lifetime = 0.35
+one_shot = true
+explosiveness = 0.95
+mesh = SubResource( 2 )
+direction = Vector3( 0, 0.5, -1 )
+spread = 75.0
+initial_velocity = 11.0
+initial_velocity_random = 0.5
+gravity = Vector3( 0, -18, 0 )
+scale_amount = 0.28
+scale_amount_random = 0.5
+
+[node name="audio" type="AudioStreamPlayer3D" parent="."]
+unit_db = 5.0
+max_distance = 45.0

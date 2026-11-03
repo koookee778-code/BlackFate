@@ -1,0 +1,476 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://data/scenes/barrel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://data/scenes/blood_pickup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://data/scripts/world/horror_facility.gd" type="Script" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.16, 0.17, 0.19, 1 )
+roughness = 0.65
+metallic = 0.15
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.12, 0.13, 0.15, 1 )
+roughness = 0.85
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.22, 0.18, 0.16, 1 )
+metallic = 0.6
+roughness = 0.4
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.42, 0.02, 0.02, 1 )
+metallic = 0.1
+roughness = 0.12
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.85, 0.15, 0.08, 1 )
+roughness = 0.5
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.1, 0.95, 0.2, 1 )
+emission_enabled = true
+emission = Color( 0.1, 0.95, 0.2, 1 )
+emission_energy = 3.0
+
+[sub_resource type="SpatialMaterial" id=7]
+flags_unshaded = true
+albedo_color = Color( 0.92, 0.96, 1.0, 1 )
+emission_enabled = true
+emission = Color( 0.92, 0.96, 1.0, 1 )
+emission_energy = 4.0
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_color = Color( 0.25, 0.26, 0.28, 1 )
+metallic = 0.4
+roughness = 0.5
+
+[sub_resource type="CubeMesh" id=10]
+material = SubResource( 1 )
+size = Vector3( 44, 2, 144 )
+
+[sub_resource type="BoxShape" id=11]
+extents = Vector3( 22, 1, 72 )
+
+[sub_resource type="CubeMesh" id=12]
+material = SubResource( 2 )
+size = Vector3( 44, 12, 2 )
+
+[sub_resource type="BoxShape" id=13]
+extents = Vector3( 22, 6, 1 )
+
+[sub_resource type="CubeMesh" id=14]
+material = SubResource( 2 )
+size = Vector3( 2, 12, 144 )
+
+[sub_resource type="BoxShape" id=15]
+extents = Vector3( 1, 6, 72 )
+
+[sub_resource type="CubeMesh" id=16]
+material = SubResource( 2 )
+size = Vector3( 44, 1, 28 )
+
+[sub_resource type="BoxShape" id=17]
+extents = Vector3( 22, 0.5, 14 )
+
+[sub_resource type="SphereMesh" id=18]
+material = SubResource( 7 )
+radius = 14.0
+height = 28.0
+radial_segments = 32
+rings = 16
+
+[sub_resource type="CubeMesh" id=19]
+material = SubResource( 3 )
+size = Vector3( 1.8, 14, 1.8 )
+
+[sub_resource type="BoxShape" id=20]
+extents = Vector3( 0.9, 7, 0.9 )
+
+[sub_resource type="CubeMesh" id=21]
+material = SubResource( 2 )
+size = Vector3( 16, 10, 1.5 )
+
+[sub_resource type="BoxShape" id=22]
+extents = Vector3( 8, 5, 0.75 )
+
+[sub_resource type="CubeMesh" id=23]
+material = SubResource( 8 )
+size = Vector3( 2.2, 1.8, 2.2 )
+
+[sub_resource type="BoxShape" id=24]
+extents = Vector3( 1.1, 0.9, 1.1 )
+
+[sub_resource type="CubeMesh" id=25]
+material = SubResource( 4 )
+size = Vector3( 4.5, 0.05, 4.5 )
+
+[sub_resource type="CubeMesh" id=26]
+material = SubResource( 4 )
+size = Vector3( 2.2, 0.05, 8.0 )
+
+[sub_resource type="CubeMesh" id=27]
+material = SubResource( 3 )
+size = Vector3( 42, 0.8, 0.8 )
+
+[node name="horror_facility" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="ambient_audio" type="AudioStreamPlayer" parent="."]
+autoplay = true
+volume_db = -2.0
+
+[node name="floor" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+[node name="mesh" type="MeshInstance" parent="floor"]
+mesh = SubResource( 10 )
+[node name="col" type="CollisionShape" parent="floor"]
+shape = SubResource( 11 )
+
+[node name="wall_south" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -72 )
+[node name="mesh" type="MeshInstance" parent="wall_south"]
+mesh = SubResource( 12 )
+[node name="col" type="CollisionShape" parent="wall_south"]
+shape = SubResource( 13 )
+
+[node name="wall_north" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 72 )
+[node name="mesh" type="MeshInstance" parent="wall_north"]
+mesh = SubResource( 12 )
+[node name="col" type="CollisionShape" parent="wall_north"]
+shape = SubResource( 13 )
+
+[node name="wall_west" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 5, 0 )
+[node name="mesh" type="MeshInstance" parent="wall_west"]
+mesh = SubResource( 14 )
+[node name="col" type="CollisionShape" parent="wall_west"]
+shape = SubResource( 15 )
+
+[node name="wall_east" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 5, 0 )
+[node name="mesh" type="MeshInstance" parent="wall_east"]
+mesh = SubResource( 14 )
+[node name="col" type="CollisionShape" parent="wall_east"]
+shape = SubResource( 15 )
+
+[node name="roof_player_bunker" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5, -58 )
+[node name="mesh" type="MeshInstance" parent="roof_player_bunker"]
+mesh = SubResource( 16 )
+[node name="col" type="CollisionShape" parent="roof_player_bunker"]
+shape = SubResource( 17 )
+
+[node name="roof_zombie_hive" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.5, 58 )
+[node name="mesh" type="MeshInstance" parent="roof_zombie_hive"]
+mesh = SubResource( 16 )
+[node name="col" type="CollisionShape" parent="roof_zombie_hive"]
+shape = SubResource( 17 )
+
+[node name="giant_moon" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 48, 12 )
+mesh = SubResource( 18 )
+
+[node name="moonlight_source" type="OmniLight" parent="giant_moon"]
+light_color = Color( 0.72, 0.85, 1.0, 1 )
+light_energy = 0.0
+omni_range = 0.1
+omni_attenuation = 1.1
+
+[node name="skylight_beam_0" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -16 )
+mesh = SubResource( 27 )
+
+[node name="skylight_beam_1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -4 )
+mesh = SubResource( 27 )
+
+[node name="skylight_beam_2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 8 )
+mesh = SubResource( 27 )
+
+[node name="skylight_beam_3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 20 )
+mesh = SubResource( 27 )
+
+[node name="skylight_beam_4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 32 )
+mesh = SubResource( 27 )
+
+[node name="pillar_0" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 6, -16 )
+[node name="mesh" type="MeshInstance" parent="pillar_0"]
+mesh = SubResource( 19 )
+[node name="col" type="CollisionShape" parent="pillar_0"]
+shape = SubResource( 20 )
+
+[node name="pillar_1" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 6, -16 )
+[node name="mesh" type="MeshInstance" parent="pillar_1"]
+mesh = SubResource( 19 )
+[node name="col" type="CollisionShape" parent="pillar_1"]
+shape = SubResource( 20 )
+
+[node name="pillar_2" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 6, 0 )
+[node name="mesh" type="MeshInstance" parent="pillar_2"]
+mesh = SubResource( 19 )
+[node name="col" type="CollisionShape" parent="pillar_2"]
+shape = SubResource( 20 )
+
+[node name="pillar_3" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 6, 0 )
+[node name="mesh" type="MeshInstance" parent="pillar_3"]
+mesh = SubResource( 19 )
+[node name="col" type="CollisionShape" parent="pillar_3"]
+shape = SubResource( 20 )
+
+[node name="pillar_4" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 6, 16 )
+[node name="mesh" type="MeshInstance" parent="pillar_4"]
+mesh = SubResource( 19 )
+[node name="col" type="CollisionShape" parent="pillar_4"]
+shape = SubResource( 20 )
+
+[node name="pillar_5" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 6, 16 )
+[node name="mesh" type="MeshInstance" parent="pillar_5"]
+mesh = SubResource( 19 )
+[node name="col" type="CollisionShape" parent="pillar_5"]
+shape = SubResource( 20 )
+
+[node name="pillar_6" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 6, 32 )
+[node name="mesh" type="MeshInstance" parent="pillar_6"]
+mesh = SubResource( 19 )
+[node name="col" type="CollisionShape" parent="pillar_6"]
+shape = SubResource( 20 )
+
+[node name="pillar_7" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 6, 32 )
+[node name="mesh" type="MeshInstance" parent="pillar_7"]
+mesh = SubResource( 19 )
+[node name="col" type="CollisionShape" parent="pillar_7"]
+shape = SubResource( 20 )
+
+[node name="wall_bunker_left" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 5, -48 )
+[node name="mesh" type="MeshInstance" parent="wall_bunker_left"]
+mesh = SubResource( 21 )
+[node name="col" type="CollisionShape" parent="wall_bunker_left"]
+shape = SubResource( 22 )
+
+[node name="wall_bunker_right" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 5, -48 )
+[node name="mesh" type="MeshInstance" parent="wall_bunker_right"]
+mesh = SubResource( 21 )
+[node name="col" type="CollisionShape" parent="wall_bunker_right"]
+shape = SubResource( 22 )
+
+[node name="wall_lab_divider" type="StaticBody" parent="."]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -7, 5, -35 )
+[node name="mesh" type="MeshInstance" parent="wall_lab_divider"]
+mesh = SubResource( 21 )
+[node name="col" type="CollisionShape" parent="wall_lab_divider"]
+shape = SubResource( 22 )
+
+[node name="wall_sec_divider" type="StaticBody" parent="."]
+transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, 7, 5, -35 )
+[node name="mesh" type="MeshInstance" parent="wall_sec_divider"]
+mesh = SubResource( 21 )
+[node name="col" type="CollisionShape" parent="wall_sec_divider"]
+shape = SubResource( 22 )
+
+[node name="wall_hall_entrance_l" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 5, -22 )
+[node name="mesh" type="MeshInstance" parent="wall_hall_entrance_l"]
+mesh = SubResource( 21 )
+[node name="col" type="CollisionShape" parent="wall_hall_entrance_l"]
+shape = SubResource( 22 )
+
+[node name="wall_hall_entrance_r" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 5, -22 )
+[node name="mesh" type="MeshInstance" parent="wall_hall_entrance_r"]
+mesh = SubResource( 21 )
+[node name="col" type="CollisionShape" parent="wall_hall_entrance_r"]
+shape = SubResource( 22 )
+
+[node name="wall_hive_breach_l" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 5, 38 )
+[node name="mesh" type="MeshInstance" parent="wall_hive_breach_l"]
+mesh = SubResource( 21 )
+[node name="col" type="CollisionShape" parent="wall_hive_breach_l"]
+shape = SubResource( 22 )
+
+[node name="wall_hive_breach_r" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 5, 38 )
+[node name="mesh" type="MeshInstance" parent="wall_hive_breach_r"]
+mesh = SubResource( 21 )
+[node name="col" type="CollisionShape" parent="wall_hive_breach_r"]
+shape = SubResource( 22 )
+
+[node name="blood_pool_0" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.03, -35 )
+mesh = SubResource( 25 )
+
+[node name="blood_pool_1" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.03, -35 )
+mesh = SubResource( 25 )
+
+[node name="blood_pool_2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, -46 )
+mesh = SubResource( 25 )
+
+[node name="blood_pool_3" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.03, 4 )
+mesh = SubResource( 25 )
+
+[node name="blood_pool_4" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.03, 14 )
+mesh = SubResource( 25 )
+
+[node name="blood_pool_5" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 37 )
+mesh = SubResource( 25 )
+
+[node name="blood_pool_6" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.03, 55 )
+mesh = SubResource( 25 )
+
+[node name="blood_pool_7" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.03, 58 )
+mesh = SubResource( 25 )
+
+[node name="crate_0" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.9, -10 )
+[node name="mesh" type="MeshInstance" parent="crate_0"]
+mesh = SubResource( 23 )
+[node name="col" type="CollisionShape" parent="crate_0"]
+shape = SubResource( 24 )
+
+[node name="crate_1" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.9, -10 )
+[node name="mesh" type="MeshInstance" parent="crate_1"]
+mesh = SubResource( 23 )
+[node name="col" type="CollisionShape" parent="crate_1"]
+shape = SubResource( 24 )
+
+[node name="crate_2" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0.9, 8 )
+[node name="mesh" type="MeshInstance" parent="crate_2"]
+mesh = SubResource( 23 )
+[node name="col" type="CollisionShape" parent="crate_2"]
+shape = SubResource( 24 )
+
+[node name="crate_3" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 12 )
+[node name="mesh" type="MeshInstance" parent="crate_3"]
+mesh = SubResource( 23 )
+[node name="col" type="CollisionShape" parent="crate_3"]
+shape = SubResource( 24 )
+
+[node name="crate_4" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.9, 8 )
+[node name="mesh" type="MeshInstance" parent="crate_4"]
+mesh = SubResource( 23 )
+[node name="col" type="CollisionShape" parent="crate_4"]
+shape = SubResource( 24 )
+
+[node name="crate_5" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.9, 24 )
+[node name="mesh" type="MeshInstance" parent="crate_5"]
+mesh = SubResource( 23 )
+[node name="col" type="CollisionShape" parent="crate_5"]
+shape = SubResource( 24 )
+
+[node name="crate_6" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.9, 24 )
+[node name="mesh" type="MeshInstance" parent="crate_6"]
+mesh = SubResource( 23 )
+[node name="col" type="CollisionShape" parent="crate_6"]
+shape = SubResource( 24 )
+
+[node name="crate_7" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.9, -60 )
+[node name="mesh" type="MeshInstance" parent="crate_7"]
+mesh = SubResource( 23 )
+[node name="col" type="CollisionShape" parent="crate_7"]
+shape = SubResource( 24 )
+
+[node name="crate_8" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.9, -60 )
+[node name="mesh" type="MeshInstance" parent="crate_8"]
+mesh = SubResource( 23 )
+[node name="col" type="CollisionShape" parent="crate_8"]
+shape = SubResource( 24 )
+
+[node name="barrel_0" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -5 )
+
+[node name="barrel_1" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -5 )
+
+[node name="barrel_2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 18 )
+
+[node name="barrel_3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 22 )
+
+[node name="barrel_4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 42 )
+
+[node name="barrel_5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 42 )
+
+[node name="blood_pickup_0" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0.5, -35 )
+
+[node name="blood_pickup_1" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0.5, -35 )
+
+[node name="blood_pickup_2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 6 )
+
+[node name="blood_pickup_3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.5, 20 )
+
+[node name="blood_pickup_4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -62 )
+
+[node name="light_bunker_red" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -60 )
+light_color = Color( 1.0, 0.15, 0.15, 1 )
+light_energy = 2.2
+omni_range = 9.0
+
+[node name="light_lab_green" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 4.5, -35 )
+light_color = Color( 0.15, 0.95, 0.25, 1 )
+light_energy = 2.4
+omni_range = 8.0
+
+[node name="light_sec_yellow" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 4.5, -35 )
+light_color = Color( 0.95, 0.75, 0.25, 1 )
+light_energy = 1.8
+omni_range = 8.0
+
+[node name="light_hall_moon_1" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 0 )
+light_color = Color( 0.65, 0.80, 1.0, 1 )
+light_energy = 2.8
+omni_range = 14.0
+
+[node name="light_hall_moon_2" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 20 )
+light_color = Color( 0.65, 0.80, 1.0, 1 )
+light_energy = 2.8
+omni_range = 14.0
+
+[node name="light_hive_red" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0, 56 )
+light_color = Color( 1.0, 0.05, 0.05, 1 )
+light_energy = 3.5
+omni_range = 10.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/flesh_impact.ogg-81f12160fe1ac6826fb8321963ac0b09.oggstr"
+
+[deps]
+
+source_file="res://data/audios/zombie/flesh_impact.ogg"
+dest_files=[ "res://.import/flesh_impact.ogg-81f12160fe1ac6826fb8321963ac0b09.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

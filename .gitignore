@@ -1,0 +1,14 @@
+# Git Ignore for Black Fate Godot 3 Project
+.import/
+*.zip
+*.log
+*.txt
+__pycache__/
+blackfate_ui_kit/
+screenshot_*.png
+test_*.png
+test_*.py
+scratch_*.py
+clean_sniper_*.png
+Export_Android_Google_Colab.ipynb
+take_all_screenshots.py

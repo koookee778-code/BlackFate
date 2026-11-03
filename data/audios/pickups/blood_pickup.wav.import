@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/blood_pickup.wav-7bf905b34dbdf9dc48b6bfbc2f482164.sample"
+
+[deps]
+
+source_file="res://data/audios/pickups/blood_pickup.wav"
+dest_files=[ "res://.import/blood_pickup.wav-7bf905b34dbdf9dc48b6bfbc2f482164.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
