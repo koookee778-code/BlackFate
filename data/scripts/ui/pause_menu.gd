@@ -21,6 +21,10 @@ func _ready() -> void:
 	_build_ui()
 	_set_pause(false)
 
+func _notification(what: int) -> void:
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		_set_pause(not is_paused)
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and not event.echo:
 		if event.scancode == KEY_ESCAPE:

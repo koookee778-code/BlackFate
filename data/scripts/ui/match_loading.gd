@@ -245,23 +245,29 @@ func _process(delta: float) -> void:
 		if progress >= 0.985:
 			progress = 1.0
 			is_finished = true
-			ready_for_input = true
 			if header_lbl:
-				header_lbl.text = "—  PRESS ANY KEY TO ENTER LAB-03  —"
-				header_lbl.set("custom_colors/font_color", Color(1.0, 0.85, 0.25))
+				header_lbl.text = "—  ENTERING LAB-03...  —"
+				header_lbl.set("custom_colors/font_color", Color(0.2, 1.0, 0.4))
+			call_deferred("_enter_game")
 
-	if ready_for_input and header_lbl:
+	if is_finished and header_lbl:
 		var a = 0.45 + 0.55 * sin(pulse_time * 5.0)
 		header_lbl.modulate = Color(1.0, 1.0, 1.0, a)
 
+var _is_transitioning : bool = false
+
 func _unhandled_input(event: InputEvent) -> void:
-	if not ready_for_input:
+	if _is_transitioning:
 		return
-	if (event is InputEventKey and event.pressed) or (event is InputEventMouseButton and event.pressed):
-		ready_for_input = false
-		_enter_game()
+	if (event is InputEventKey and event.pressed) or (event is InputEventMouseButton and event.pressed) or (event is InputEventScreenTouch and event.pressed):
+		is_finished = true
+		progress = 1.0
+		call_deferred("_enter_game")
 
 func _enter_game() -> void:
+	if _is_transitioning:
+		return
+	_is_transitioning = true
 	var tw = Tween.new()
 	add_child(tw)
 	tw.interpolate_property(self, "modulate", Color(1, 1, 1, 1), Color(0, 0, 0, 1), 0.35, Tween.TRANS_SINE, Tween.EASE_OUT)
