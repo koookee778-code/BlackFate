@@ -22,28 +22,42 @@ jobs:
 
       - name: "Setup Android Keystore, Templates & Settings"
         run: |
-          # 1. Create debug keystore
+          set -e
+          echo "=== 1. Generating Debug Keystore ==="
           keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Mohamed Emad,O=Black Fate,C=EG" -validity 9999
-          
-          # 2. Setup export templates in $HOME
+          cp debug.keystore /root/debug.keystore 2>/dev/null || true
+
+          echo "=== 2. Configuring Export Templates ==="
           mkdir -p "$HOME/.local/share/godot/templates/3.5.2.stable"
           cp -r /root/.local/share/godot/templates/* "$HOME/.local/share/godot/templates/" 2>/dev/null || true
           cp -r /root/.local/share/godot/export_templates/* "$HOME/.local/share/godot/templates/" 2>/dev/null || true
-          
-          # 3. Setup Editor Settings safely using python
-          godot -e -q 2>/dev/null || true
-          python3 -c "
-          import os
-          cfg_path = os.path.expanduser('~/.config/godot/editor_settings-3.tres')
-          os.makedirs(os.path.dirname(cfg_path), exist_ok=True)
-          pwd = os.getcwd()
-          with open(cfg_path, 'a') as f:
-              f.write('export/android/android_sdk_path = \"/usr/lib/android-sdk\"\n')
-              f.write('export/android/debug_keystore = \"' + pwd + '/debug.keystore\"\n')
-              f.write('export/android/debug_keystore_user = \"androiddebugkey\"\n')
-              f.write('export/android/debug_keystore_pass = \"android\"\n')
-          print('Settings updated successfully!')
-          "
+
+          TEMPLATE_DIR="$HOME/.local/share/godot/templates/3.5.2.stable"
+          if [ ! -f "$TEMPLATE_DIR/android_debug.apk" ]; then
+              FOUND_APK=$(find /root "$HOME" -name "android_debug.apk" 2>/dev/null | head -n 1)
+              if [ -n "$FOUND_APK" ]; then
+                  echo "Found template at $FOUND_APK, copying..."
+                  cp "$(dirname "$FOUND_APK")"/* "$TEMPLATE_DIR/" 2>/dev/null || true
+              fi
+          fi
+
+          echo "=== 3. Configuring Editor Settings ==="
+          mkdir -p "$HOME/.config/godot"
+          if [ -f "/root/.config/godot/editor_settings-3.tres" ]; then
+              cp -r /root/.config "$HOME/"
+          else
+              godot -e -q 2>/dev/null || true
+          fi
+
+          cat << 'EOF' >> "$HOME/.config/godot/editor_settings-3.tres"
+export/android/android_sdk_path = "/usr/lib/android-sdk"
+export/android/adb = "/usr/bin/adb"
+export/android/jarsigner = "/usr/bin/jarsigner"
+export/android/debug_keystore = "/root/debug.keystore"
+export/android/debug_keystore_user = "androiddebugkey"
+export/android/debug_keystore_pass = "android"
+EOF
+          echo "Editor settings configured successfully!"
 
       - name: "Build Android APK via Godot"
         run: |
@@ -52,9 +66,23 @@ jobs:
 
       - name: "Sign APK with V2 & V3 Signatures"
         run: |
-          zipalign -f -p 4 build/android/BlackFate_raw.apk build/android/BlackFate_aligned.apk
-          apksigner sign --ks debug.keystore --ks-pass pass:android --key-pass pass:android --ks-key-alias androiddebugkey --v1-signing-enabled true --v2-signing-enabled true --v3-signing-enabled true --out build/android/BlackFate.apk build/android/BlackFate_aligned.apk
-          apksigner verify --verbose build/android/BlackFate.apk
+          set -e
+          ZIPALIGN=$(which zipalign 2>/dev/null || find /usr -name zipalign 2>/dev/null | head -n 1)
+          APKSIGNER=$(which apksigner 2>/dev/null || find /usr -name apksigner 2>/dev/null | head -n 1)
+
+          if [ -z "$ZIPALIGN" ] || [ -z "$APKSIGNER" ]; then
+              apt-get update && apt-get install -y zipalign apksigner
+              ZIPALIGN=$(which zipalign)
+              APKSIGNER=$(which apksigner)
+          fi
+
+          echo "Using zipalign at: $ZIPALIGN"
+          echo "Using apksigner at: $APKSIGNER"
+
+          "$ZIPALIGN" -f -p 4 build/android/BlackFate_raw.apk build/android/BlackFate_aligned.apk
+          "$APKSIGNER" sign --ks debug.keystore --ks-pass pass:android --key-pass pass:android --ks-key-alias androiddebugkey --v1-signing-enabled true --v2-signing-enabled true --v3-signing-enabled true --out build/android/BlackFate.apk build/android/BlackFate_aligned.apk
+          "$APKSIGNER" verify --verbose build/android/BlackFate.apk
+          echo "=== APK Successfully Built, Signed and Verified! ==="
 
       - name: "Upload APK to GitHub (Direct Download)"
         uses: actions/upload-artifact@v4
