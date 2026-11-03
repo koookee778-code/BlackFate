@@ -20,20 +20,34 @@ jobs:
         with:
           lfs: true
 
-      - name: "Setup Android Keystore & Settings"
+      - name: "Setup Android Keystore, Templates & Settings"
         run: |
+          # 1. Create debug keystore
           keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Mohamed Emad,O=Black Fate,C=EG" -validity 9999
+          
+          # 2. Setup export templates in $HOME
+          mkdir -p "$HOME/.local/share/godot/templates/3.5.2.stable"
+          cp -r /root/.local/share/godot/templates/* "$HOME/.local/share/godot/templates/" 2>/dev/null || true
+          cp -r /root/.local/share/godot/export_templates/* "$HOME/.local/share/godot/templates/" 2>/dev/null || true
+          if [ ! -f "$HOME/.local/share/godot/templates/3.5.2.stable/android_debug.apk" ]; then
+            echo "Downloading 3.5.2 export templates..."
+            wget -q https://github.com/godotengine/godot/releases/download/3.5.2-stable/Godot_v3.5.2-stable_export_templates.tpz
+            unzip -q -o Godot_v3.5.2-stable_export_templates.tpz
+            cp -r templates/* "$HOME/.local/share/godot/templates/3.5.2.stable/"
+          fi
+          
+          # 3. Setup Editor Settings
           godot -e -q 2>/dev/null || true
-          mkdir -p ~/.config/godot
-          echo 'export/android/android_sdk_path = "/usr/lib/android-sdk"' >> ~/.config/godot/editor_settings-3.tres
-          echo 'export/android/debug_keystore = "'$PWD'/debug.keystore"' >> ~/.config/godot/editor_settings-3.tres
-          echo 'export/android/debug_keystore_user = "androiddebugkey"' >> ~/.config/godot/editor_settings-3.tres
-          echo 'export/android/debug_keystore_pass = "android"' >> ~/.config/godot/editor_settings-3.tres
+          mkdir -p "$HOME/.config/godot"
+          echo 'export/android/android_sdk_path = "/usr/lib/android-sdk"' >> "$HOME/.config/godot/editor_settings-3.tres"
+          echo 'export/android/debug_keystore = "'$PWD'/debug.keystore"' >> "$HOME/.config/godot/editor_settings-3.tres"
+          echo 'export/android/debug_keystore_user = "androiddebugkey"' >> "$HOME/.config/godot/editor_settings-3.tres"
+          echo 'export/android/debug_keystore_pass = "android"' >> "$HOME/.config/godot/editor_settings-3.tres
 
       - name: "Build Android APK via Godot"
         run: |
           mkdir -p build/android
-          godot --verbose --export-debug "Android" build/android/BlackFate_raw.apk
+          godot -v --export-debug "Android" build/android/BlackFate_raw.apk
 
       - name: "Sign APK with V2 & V3 Signatures"
         run: |
